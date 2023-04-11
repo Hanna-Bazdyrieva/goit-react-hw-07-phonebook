@@ -1,11 +1,15 @@
 import { Box } from 'components/Box/Box';
 import { Input, Title } from './Filter.styled';
 import { useDispatch, useSelector } from 'react-redux';
-import { changeFilter, getFilter } from 'redux/filterSlice';
+import { changeFilter } from 'redux/filterSlice';
+import { selectFilter } from 'redux/selectors';
+
+
+
 
 const Filter = () => {
   const dispatch = useDispatch();
-  const filter = useSelector(getFilter);
+  const filter = useSelector(selectFilter);
 
   return (
     <Box as="ul" mx="auto" my={2} px={6} py={4} bg="list" borderRadius="10px">

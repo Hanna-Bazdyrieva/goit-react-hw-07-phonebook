@@ -1,6 +1,15 @@
 import { createSlice } from '@reduxjs/toolkit';
 // import contactsList from 'utils/contactsList';
 
+// const handlePending = state => {
+//   state.isLoading = true;
+// };
+// const handleRejected = (state, action) => {
+//   state.isLoading = false;
+//   state.error = action.payload;
+// };
+
+
 export const contactsSlice = createSlice({
   name: 'contacts',
   initialState: {
@@ -54,11 +63,6 @@ export const contactsSlice = createSlice({
 });
 
 const contactsReducer = contactsSlice.reducer;
-
-// Selectors
-export const getContactsItems = state => state.contacts.items;
-export const getIsLoading = state => state.contacts.isLoading;
-export const isContactsExist = state => Boolean(state.contacts.items.length);
 
 export const {
   getContactsRequest,

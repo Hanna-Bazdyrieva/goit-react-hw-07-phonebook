@@ -4,13 +4,13 @@ import { v4 as uuidv4 } from 'uuid';
 import { InputLabel, AddBtn, Input } from './ContactForm.styled';
 
 import { useDispatch, useSelector } from 'react-redux';
-import { getContactsItems } from '../../redux/contactSlice';
 import { addContact } from 'redux/contactsOperations';
+import { selectContacts } from 'redux/selectors';
 
 const ContactForm = () => {
   const [name, setName] = useState('');
   const [number, setNumber] = useState('');
-  const contacts = useSelector(getContactsItems);
+  const contacts = useSelector(selectContacts);
 
   const dispatch = useDispatch();
 

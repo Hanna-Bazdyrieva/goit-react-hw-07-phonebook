@@ -11,16 +11,10 @@ export const getContactsApi = () => {
 };
 
 export const addContactApi = contact => {
-  return axios.post('/contacts', contact).then(({ data }) => {
-    console.log(data);
-    return { ...contact, id: data.id };
-  });
+  return axios.post('/contacts', contact).then(({ data }) => ({ ...contact, id: data.id }));
+ 
 };
 
 export const removeContactApi = (id)=>{
-  console.log(id)
-  const contact = axios.get(`/contacts/${id}`).then(()=>id)
-  console.log(contact)
-
     return axios.delete(`/contacts/${id}`).then(()=>id)
 }
