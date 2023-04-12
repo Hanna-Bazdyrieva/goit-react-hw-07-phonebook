@@ -2,8 +2,12 @@ import { Box } from 'components/Box/Box';
 import ContactListItem from 'components/ContactListItem';
 import NoContacts from 'components/NoContacts/NoContacts';
 import { memo } from 'react';
+import { useSelector } from 'react-redux';
+import { selectFilteredContacts } from 'redux/selectors';
 
-const ContactList = ({ contacts }) => {
+const ContactList = () => {
+  const contacts = useSelector(selectFilteredContacts)
+
   return (
     <>
       {contacts.length === 0 && <NoContacts message="No contacts found" />}
